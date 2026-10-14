@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <LangVersion>5</LangVersion>
+    <RootNamespace>SmsGatewayHub</RootNamespace>
+    <AssemblyName>SmsGatewayHub</AssemblyName>
+    <PackageId>SmsGatewayHub</PackageId>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Authors>SMS Gateway Hub</Authors>
+    <Company>SMSGatewayHub</Company>
+    <Product>SMSGatewayHub .NET SDK</Product>
+    <Copyright>Copyright (c) 2026 SMSGatewayHub</Copyright>
+    <Description>Official SMSGatewayHub .NET SDK: classic SMS API, CPaaS unified messages (WhatsApp / SMS / RCS / Email with fallback), OneTap Verify and Email Verification. Zero dependencies. Server-side use only.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://www.smsgatewayhub.com/sdks</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/smsgatewayhub91/smsgatewayhub-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>sms;whatsapp;rcs;email;otp;cpaas;smsgatewayhub;india;dlt</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>1.0.0 - first release (09-10-2026).</PackageReleaseNotes>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <PackageOutputPath>..\..\..\dist</PackageOutputPath>
+  </PropertyGroup>
+
+  <!-- net45: HttpClient lives in the framework assembly System.Net.Http (no NuGet package needed). -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
